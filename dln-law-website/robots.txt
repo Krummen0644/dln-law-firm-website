@@ -1,0 +1,35 @@
+# Donald L. Nageleisen Attorney at Law - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.nageleisen-law.com/sitemap.xml
+
+# Crawl delay (optional, adjust as needed)
+Crawl-delay: 1
+
+# Disallow search bots from indexing specific files if needed
+# User-agent: *
+# Disallow: /private/
+# Disallow: /admin/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
