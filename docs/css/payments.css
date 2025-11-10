@@ -1,0 +1,192 @@
+/* Donald L. Nageleisen Attorney at Law - Payments Portal Styles */
+
+/* Form Input Focus States */
+#payment-form input:focus,
+#payment-form textarea:focus,
+#payment-form select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Error States */
+.border-red-500 {
+    border-color: #ef4444 !important;
+}
+
+.border-red-500:focus {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Payment Method Button Hover Animation */
+.payment-method-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.payment-method-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.payment-method-btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.payment-method-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Modal Overlay Animation */
+#payment-modal {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal Content Animation */
+#payment-modal > div {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Checkbox Custom Styling */
+input[type="checkbox"]:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Form Section Spacing */
+#payment-form > div {
+    position: relative;
+}
+
+/* Amount Input Styling */
+#amount {
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+/* Validation Summary Slide In */
+#validation-summary {
+    animation: slideInFromTop 0.3s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Payment Methods Section Fade In */
+#payment-methods-section {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Disabled Button Styling */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Honeypot Field (hidden) */
+#website {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
+
+/* Print Styles for Payment Receipt */
+@media print {
+    #payment-modal {
+        background: white !important;
+    }
+
+    #payment-modal > div {
+        box-shadow: none !important;
+        max-width: 100% !important;
+    }
+
+    #close-modal,
+    #open-provider-btn,
+    #download-csv-btn {
+        display: none !important;
+    }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
+    #payment-modal > div {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .payment-method-btn {
+        padding: 1rem;
+    }
+}
+
+/* Accessibility - High Contrast Support */
+@media (prefers-contrast: high) {
+    .payment-method-btn {
+        border-width: 3px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus,
+    button:focus {
+        outline: 3px solid currentColor;
+        outline-offset: 3px;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .payment-method-btn::before {
+        transition: none;
+    }
+}
