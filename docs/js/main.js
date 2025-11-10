@@ -3,6 +3,9 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Demo Banner
+    initDemoBanner();
+
     // Mobile Menu Toggle
     initMobileMenu();
 
@@ -18,6 +21,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animation on Scroll
     initScrollAnimations();
 });
+
+/**
+ * Demo Banner Dismissal
+ */
+function initDemoBanner() {
+    const banner = document.getElementById('demo-banner');
+    const closeButton = document.getElementById('demo-banner-close');
+
+    if (!banner) return;
+
+    // Check if banner was previously dismissed
+    const bannerDismissed = localStorage.getItem('demoBannerDismissed');
+
+    if (bannerDismissed === 'true') {
+        banner.classList.add('hidden');
+        return;
+    }
+
+    // Handle close button click
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            banner.classList.add('hidden');
+            localStorage.setItem('demoBannerDismissed', 'true');
+        });
+    }
+}
 
 /**
  * Mobile Menu Functionality
