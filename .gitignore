@@ -1,0 +1,224 @@
+# ============================================================================
+# DLN Legal Website - Git Ignore Rules
+# ============================================================================
+
+# -----------------------------------------------------------------------------
+# Editor & OS Cruft
+# -----------------------------------------------------------------------------
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.\#*
+.emacs.desktop
+.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------------------------------------------------------------
+# Node.js / npm (for future tooling)
+# -----------------------------------------------------------------------------
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# -----------------------------------------------------------------------------
+# Build Artifacts
+# -----------------------------------------------------------------------------
+
+dist/
+build/
+out/
+.cache/
+coverage/
+.nyc_output/
+
+# Compiled CSS (if using preprocessors)
+# Uncomment if you compile styles.css from source
+# docs/css/styles.css
+# docs/css/tailwind.min.css
+
+# -----------------------------------------------------------------------------
+# Deployment & Hosting
+# -----------------------------------------------------------------------------
+
+.vercel/
+.netlify/
+.firebase/
+.surge/
+
+# -----------------------------------------------------------------------------
+# Static Site Generators
+# -----------------------------------------------------------------------------
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Hugo
+/public/
+/resources/_gen/
+
+# Eleventy
+_site/
+.cache/
+
+# -----------------------------------------------------------------------------
+# Archives & Compressed Files
+# -----------------------------------------------------------------------------
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# Exclude intentional distribution archives
+# !releases/*.zip
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+
+*.log
+logs/
+*.log.*
+
+# -----------------------------------------------------------------------------
+# IDEs
+# -----------------------------------------------------------------------------
+
+# JetBrains (WebStorm, PhpStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# -----------------------------------------------------------------------------
+# Misc
+# -----------------------------------------------------------------------------
+
+# Compiled binary addons
+*.node
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variables file
+.env.test
+
+# parcel-bundler cache
+.parcel-cache
+
+# Next.js
+.next/
+
+# Nuxt.js
+.nuxt/
+
+# Gatsby
+.cache/
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# -----------------------------------------------------------------------------
+# Project-Specific
+# -----------------------------------------------------------------------------
+
+# Test files (uncomment if you create a test suite)
+# __tests__/
+# *.test.js
+# *.spec.js
