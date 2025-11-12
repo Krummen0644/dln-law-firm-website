@@ -1,0 +1,26 @@
+{
+  "name": "dln-legal-website",
+  "version": "1.0.0",
+  "description": "Donald L. Nageleisen Attorney at Law - Professional Law Firm Website",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "prebuild": "npm run clean"
+  },
+  "keywords": [
+    "law-firm",
+    "attorney",
+    "legal",
+    "static-site"
+  ],
+  "author": "Donald L. Nageleisen Attorney at Law",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

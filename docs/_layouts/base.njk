@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {# Page-specific meta tags #}
+    <meta name="description" content="{{ description or 'Donald L. Nageleisen Attorney at Law - Experienced Kentucky lawyer serving Northern Kentucky.' }}">
+    {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+    {% if author %}<meta name="author" content="{{ author }}">{% endif %}
+
+    {# Geographic meta tags #}
+    <meta name="geo.region" content="US-KY">
+    <meta name="geo.placename" content="Northern Kentucky">
+
+    {# Open Graph tags #}
+    <meta property="og:title" content="{{ ogTitle or title }}">
+    <meta property="og:description" content="{{ ogDescription or description }}">
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:url" content="{{ ogUrl or 'https://www.nageleisen-law.com' }}">
+    <meta property="og:image" content="{{ ogImage or 'https://www.nageleisen-law.com/images/law-office.jpg' }}">
+
+    {# Page title #}
+    <title>{{ title }}</title>
+
+    {# Tailwind CSS CDN #}
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    {# Custom Styles #}
+    <link rel="stylesheet" href="/css/styles.css">
+    {% if extraCSS %}
+        {% for css in extraCSS %}
+        <link rel="stylesheet" href="/css/{{ css }}">
+        {% endfor %}
+    {% endif %}
+
+    {# Favicon #}
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+    {# Preconnect for performance #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    {# Schema.org JSON-LD (if provided) #}
+    {% if schema %}
+    <script type="application/ld+json">
+    {{ schema | safe }}
+    </script>
+    {% endif %}
+</head>
+<body class="font-sans antialiased">
+
+    {# Header / Navigation #}
+    {% include "header.njk" %}
+
+    {# Main Content #}
+    <main id="main-content">
+        {{ content | safe }}
+    </main>
+
+    {# Footer #}
+    {% include "footer.njk" %}
+
+</body>
+</html>

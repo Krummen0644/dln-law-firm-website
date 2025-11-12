@@ -99,6 +99,9 @@ out/
 coverage/
 .nyc_output/
 
+# Eleventy output
+_site/
+
 # Compiled CSS (if using preprocessors)
 # Uncomment if you compile styles.css from source
 # docs/css/styles.css
