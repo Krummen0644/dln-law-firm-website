@@ -2,74 +2,109 @@
 
 A modern, mobile-first, SEO-optimized website for a Kentucky law firm specializing in Criminal Defense, Personal Injury, Medical Malpractice, Family Law, and Civil Rights.
 
+Built with **Eleventy** static site generator for easy maintenance and zero code duplication.
+
 ## 🚀 Features
 
 - **Mobile-First Responsive Design** - Optimized for all devices
 - **Strong Local SEO** - Schema markup, meta tags, sitemap
 - **Accessibility (WCAG 2.1 AA)** - ARIA labels, keyboard navigation, skip links
-- **Fast Loading** - No build step, CDN-hosted resources
+- **Fast Loading** - Static site generation with CDN-hosted resources
 - **Contact Form** - Client-side validation with user-friendly error messages
 - **Practice Area Pages** - Comprehensive coverage of all legal services
 - **Case Results & Testimonials** - Social proof and credibility
+- **Template System** - Header/footer in one location, site-wide updates in seconds
+
+## 🏗️ For Developers
+
+This site uses **Eleventy (11ty)** to eliminate HTML duplication. Header and footer are managed in a single location.
+
+### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server with live reload
+npm run dev
+
+# Build for production
+npm run build
+```
+
+Visit `http://localhost:8080` during development.
+
+**For detailed developer documentation, see [DEVELOPMENT.md](DEVELOPMENT.md)**
 
 ## 📁 Project Structure
 
 ```
-dln-law-website/
-├── index.html                   # Homepage
-├── about.html                   # Attorney bio and credentials
-├── contact.html                 # Contact form and office info
-├── results.html                 # Case results and testimonials
-├── criminal-defense.html        # Criminal Defense practice area
-├── personal-injury.html         # Personal Injury practice area
-├── medical-malpractice.html     # Medical Malpractice practice area
-├── family-law.html              # Family Law practice area
-├── civil-rights.html            # Civil Rights practice area
-├── sitemap.xml                  # XML sitemap for search engines
-├── robots.txt                   # Robots file for crawlers
-├── css/
-│   └── styles.css              # Custom styles and animations
-├── js/
-│   └── main.js                 # JavaScript for interactivity
-├── images/                      # Image assets
-└── assets/                      # Additional assets
+/DLN Legal Website/
+├── docs/                        # Source files
+│   ├── _includes/               # Reusable components
+│   │   ├── header.njk          # Header/navigation (single source)
+│   │   └── footer.njk          # Footer (single source)
+│   ├── _layouts/                # Page templates
+│   │   └── base.njk            # Base layout with head/body
+│   ├── index.html               # Homepage
+│   ├── about.html               # About page
+│   ├── contact.html             # Contact form
+│   ├── results.html             # Case results
+│   ├── criminal-defense.html    # Practice area pages
+│   ├── personal-injury.html
+│   ├── medical-malpractice.html
+│   ├── family-law.html
+│   ├── civil-rights.html
+│   ├── legal/                   # Legal pages
+│   │   ├── privacy-policy.html
+│   │   ├── disclaimer.html
+│   │   └── payment-disclaimer.html
+│   ├── payments/
+│   │   └── index.html           # Payment portal
+│   ├── css/                     # Stylesheets
+│   ├── js/                      # JavaScript
+│   └── images/                  # Images
+├── _site/                       # Built site (generated, git-ignored)
+├── .eleventy.js                 # Eleventy configuration
+├── package.json                 # Dependencies and scripts
+├── README.md                    # This file
+└── DEVELOPMENT.md               # Detailed developer guide
 ```
 
 ## 🛠️ Technologies Used
 
+- **Eleventy 2.0.1** - Static site generator
+- **Nunjucks** - Template engine
 - **HTML5** - Semantic markup
 - **Tailwind CSS** - Utility-first CSS framework (via CDN)
 - **Vanilla JavaScript** - No dependencies
 - **Google Fonts** - Inter & Playfair Display
 
-## 📦 Installation & Deployment
+## 📦 Deployment
 
-### Option 1: Simple Static Hosting
+### Option 1: Netlify (Recommended)
 
-1. **Upload files to any web hosting provider:**
-   - All files in the `dln-law-website/` folder
-   - Ensure folder structure is maintained
+1. Connect repository to [netlify.com](https://netlify.com)
+2. **Build command:** `npm run build`
+3. **Publish directory:** `_site`
+4. Netlify will auto-deploy on git push
+5. Configure custom domain and SSL
 
-2. **Hosting providers (recommended):**
-   - **Netlify** (Free, automatic SSL, CDN)
-   - **Vercel** (Free, fast deployment)
-   - **GitHub Pages** (Free, version controlled)
-   - Traditional hosting (GoDaddy, Bluehost, etc.)
+### Option 2: Vercel
 
-### Option 2: Netlify Deployment (Recommended)
-
-1. Create account at [netlify.com](https://netlify.com)
-2. Drag and drop the `dln-law-website` folder
-3. Configure custom domain
-4. SSL automatically provisioned
+1. Connect repository to [vercel.com](https://vercel.com)
+2. **Build command:** `npm run build`
+3. **Output directory:** `_site`
+4. Auto-deploy on git push
 
 ### Option 3: GitHub Pages
 
-1. Create GitHub repository
-2. Upload files to repository
-3. Go to Settings → Pages
-4. Select branch and folder
-5. Site will be live at `username.github.io/repo-name`
+1. Build the site: `npm run build`
+2. Copy `_site/` contents to deployment directory
+3. Commit and push to GitHub
+4. Enable Pages in repository settings
+
+**Note:** For all deployment options, you must run `npm run build` to generate the static site in `_site/` directory.
 
 ## ✅ Pre-Launch Checklist
 
@@ -79,40 +114,50 @@ dln-law-website/
   - Phone number: Currently set to `(859) 555-0100`
   - Email: Currently set to `don@nageleisen-law.com`
   - Address: Currently set to `123 Main Street, Suite 200, Covington, KY 41011`
-  - Find/replace these across all HTML files
+  - **Edit these in 2 files only:**
+    - `docs/_includes/header.njk` (navigation)
+    - `docs/_includes/footer.njk` (footer)
+  - Run `npm run build` to regenerate all pages
 
 - [ ] **Update domain name**
   - Current placeholder: `www.nageleisen-law.com`
-  - Update in all HTML files (meta tags, schema)
-  - Update in `sitemap.xml`
-  - Update in `robots.txt`
+  - Update in page front matter (meta tags, schema)
+  - Update in `docs/sitemap.xml`
+  - Update in `docs/robots.txt`
+  - Run `npm run build` to regenerate all pages
 
 - [ ] **Add professional photos**
-  - Attorney profile photo (`images/attorney-profile.jpg`)
+  - Attorney profile photo (`docs/images/attorney-profile.jpg`)
   - Office exterior/interior photos
   - Replace placeholder SVG images
+  - Run `npm run build` after adding images
 
 - [ ] **Configure contact form backend**
-  - Current form is frontend-only (see `js/main.js`)
+  - Current form is frontend-only (see `docs/js/main.js`)
+  - Edit form in `docs/contact.html`
   - Options:
     - Formspree (easy, free tier available)
     - EmailJS
     - Custom backend (PHP, Node.js, etc.)
     - Netlify Forms (if using Netlify)
+  - Run `npm run build` after configuration
 
 - [ ] **Update Google Maps embed**
-  - In `contact.html`, update map iframe with actual office location
+  - In `docs/contact.html`, update map iframe with actual office location
   - Get embed code from [Google Maps](https://www.google.com/maps)
+  - Run `npm run build` after update
 
 - [ ] **Verify bar information**
-  - Update bar membership details in `about.html`
+  - Update bar membership details in `docs/about.html`
   - Add bar numbers if required
   - Verify education credentials
+  - Run `npm run build` after update
 
 - [ ] **Review case results**
-  - Update case results in `results.html` with real data
+  - Update case results in `docs/results.html` with real data
   - Ensure compliance with ethical advertising rules
   - Add required disclaimers per Kentucky Bar rules
+  - Run `npm run build` after update
 
 ## 🔍 SEO Optimization Checklist
 
@@ -302,5 +347,14 @@ This website template is proprietary. All rights reserved.
 
 ---
 
+## 📚 Additional Resources
+
+- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Comprehensive developer guide
+- [Eleventy Documentation](https://www.11ty.dev/docs/)
+- [Nunjucks Templating](https://mozilla.github.io/nunjucks/templating.html)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+
+---
+
 **Last Updated:** January 2025
-**Version:** 1.0.0
+**Version:** 2.0.0 - Eleventy Template System
