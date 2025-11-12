@@ -62,5 +62,12 @@
     {# Footer #}
     {% include "footer.njk" %}
 
+    {# Extra JavaScript files (if specified) #}
+    {% if extraJS %}
+        {% for js in extraJS %}
+        <script src="/js/{{ js }}"></script>
+        {% endfor %}
+    {% endif %}
+
 </body>
 </html>

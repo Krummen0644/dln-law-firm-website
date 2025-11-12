@@ -1,10 +1,48 @@
----
-layout: base.njk
-title: "Legal Disclaimer | Donald L. Nageleisen Attorney at Law"
-description: "Legal Disclaimer for Donald L. Nageleisen Attorney at Law"
-keywords: ""
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legal Disclaimer for Donald L. Nageleisen Attorney at Law">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Legal Disclaimer | Donald L. Nageleisen Attorney at Law</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased bg-gray-50">
+
+    <!-- Demo Banner -->
+    <div id="demo-banner" class="demo-banner" role="region" aria-live="polite" aria-label="Demo site notice">
+        <div class="demo-banner-content">
+            <span class="text-sm md:text-base font-semibold text-gray-900">This is a demo site — payments are not live.</span>
+        </div>
+        <button id="demo-banner-close" class="demo-banner-close" aria-label="Close demo banner">×</button>
+    </div>
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">Skip to main content</a>
+
+    <header class="fixed w-full top-0 z-50 bg-white shadow-md" id="header">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                    <span class="font-serif">DLN</span> <span class="text-blue-600">Law</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-700 hover:text-blue-600 font-semibold transition-colors">Home</a>
+                    <a href="../contact.html" class="text-gray-700 hover:text-blue-600 font-semibold transition-colors">Contact</a>
+                    <a href="tel:+18595550100" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">(859) 555-0100</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="pt-24 pb-16">
+        <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-12">
             <div class="container mx-auto px-4">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Legal Disclaimer</h1>
                 <p class="text-xl text-gray-200">Important information about using this website</p>
@@ -114,3 +152,18 @@ keywords: ""
                 </div>
             </div>
         </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 Donald L. Nageleisen Attorney at Law. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
