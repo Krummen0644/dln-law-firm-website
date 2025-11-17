@@ -40,6 +40,9 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk",
 
     // Transforms and other settings
-    pathPrefix: "/",
+    // Use environment variable for GitHub Pages deployment
+    // GitHub Pages: /dln-law-firm-website/
+    // Localhost: /
+    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/dln-law-firm-website/' : '/',
   };
 };

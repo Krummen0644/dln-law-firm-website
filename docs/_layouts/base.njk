@@ -27,15 +27,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     {# Custom Styles #}
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
     {% if extraCSS %}
         {% for css in extraCSS %}
-        <link rel="stylesheet" href="/css/{{ css }}">
+        <link rel="stylesheet" href="{{ ('/css/' + css) | url }}">
         {% endfor %}
     {% endif %}
 
     {# Favicon #}
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | url }}">
 
     {# Preconnect for performance #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +65,7 @@
     {# Extra JavaScript files (if specified) #}
     {% if extraJS %}
         {% for js in extraJS %}
-        <script src="/js/{{ js }}"></script>
+        <script src="{{ ('/js/' + js) | url }}"></script>
         {% endfor %}
     {% endif %}
 
