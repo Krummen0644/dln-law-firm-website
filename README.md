@@ -111,7 +111,7 @@ Visit `http://localhost:8080` during development.
 ### Required Updates
 
 - [ ] **Update contact information**
-  - Phone number: Currently set to `(859) 555-0100`
+  - Phone number: Currently set to `(859) 555-0100` (default filler)
   - Email: Currently set to `don@nageleisen-law.com`
   - Address: Currently set to `123 Main Street, Suite 200, Covington, KY 41011`
   - **Edit these in 2 files only:**
